@@ -3,5 +3,6 @@
     "activityBar.background": "#24311A",
     "titleBar.activeBackground": "#324524",
     "titleBar.activeForeground": "#F8FAF6"
-  }
+  },
+  "emmet.includeLanguages": {"html.erb": "html", "erb": "html"}
 }
