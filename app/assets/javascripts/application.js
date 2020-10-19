@@ -12,5 +12,9 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+// = require turbolinks
 //= require_tree .
+
+setTimeout(function() {
+  $('.notice').remove();
+}, 3); 

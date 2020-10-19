@@ -13,7 +13,7 @@
 
 <body>
   <% if flash[:notice] %>
-  <div class=".notification is-primary global-notification">
+  <div class="notification is-primary global-notification">
     <p class='notice'><%= notice %></p>
   </div>
   <% end %>
@@ -37,9 +37,21 @@
       <div class='navbar-end'>
         <div class="navbar-item">
           <div class='field is-grouped'>
+            <% if user_signed_in? %>
             <p class='control'>
-              <%= link_to 'New Tweeet', new_tweeet_path, class: 'button is-info is-inverted' %>
+              <%= link_to 'New Tweeet', tweeets_path, class: 'button is-info is-inverted' %>
             </p>
+            <% end %>
+            <% if user_signed_in? %>
+            <p class="control">
+              <%= link_to current_user.name, edit_user_registration_path, class: 'button is-info' %>
+            </p>
+            <p class="control">
+              <%= link_to 'Logout', destroy_user_session_path, class: 'button is-info', method: :delete %>
+            </p>
+            <% else %>
+            <%= link_to 'Sign In', user_session_path, class: 'button is-info' %>
+            <% end %>
           </div>
         </div>
       </div>
