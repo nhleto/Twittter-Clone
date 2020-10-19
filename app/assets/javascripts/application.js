@@ -15,6 +15,18 @@
 // = require turbolinks
 //= require_tree .
 
-setTimeout(function() {
-  $('.notice').remove();
-}, 3); 
+// const flash = document.getElementsByClassName('alert')
+
+// function fadeOut(){
+//   flash.setTimeOut(1000);
+// }
+
+document.addEventListener('DOMContentLoaded', () => {
+  (document.querySelectorAll('.notice .alert') || []).forEach(($delete) => {
+    var $notification = $delete.parentNode;
+
+    $delete.addEventListener('click', () => {
+      $notification.parentNode.removeChild($notification);
+    });
+  });
+});
