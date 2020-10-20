@@ -31,3 +31,8 @@
  .notification:not(:last-child){
    margin-bottom: 0;
  }
+
+ .hide-flash {
+  opacity: 0;
+  transition: opacity 0.5s ease;  
+}

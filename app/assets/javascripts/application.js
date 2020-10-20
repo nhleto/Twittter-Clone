@@ -21,12 +21,12 @@
 //   flash.setTimeOut(1000);
 // }
 
-document.addEventListener('DOMContentLoaded', () => {
-  (document.querySelectorAll('.notice .alert') || []).forEach(($delete) => {
-    var $notification = $delete.parentNode;
+function hideFlash() {
+  const flash = document.querySelector('#notification is-primary global-notification')
 
-    $delete.addEventListener('click', () => {
-      $notification.parentNode.removeChild($notification);
-    });
-  });
-});
+  if (flash) {
+    setTimeOut(2000);    
+  }
+}
+
+hideFlash()
